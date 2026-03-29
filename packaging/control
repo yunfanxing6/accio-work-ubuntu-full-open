@@ -1,0 +1,10 @@
+Package: accio-work
+Version: 0.4.6
+Section: devel
+Priority: optional
+Architecture: amd64
+Maintainer: Accio Work
+Homepage: https://work.accio.com/
+Depends: libasound2 | libasound2t64, libatk-bridge2.0-0, libdrm2, libgbm1, libgtk-3-0, libnss3, libsecret-1-0, libx11-xcb1, libxcomposite1, libxdamage1, libxfixes3, libxkbcommon0, libxrandr2, libxshmfence1, xdg-utils
+Description: Accio Work Desktop Application
+ Native Ubuntu build reconstructed from an authorized upstream release.

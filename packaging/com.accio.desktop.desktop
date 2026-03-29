@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Accio Work
+GenericName=AI Assistant
+Comment=Local-first desktop AI agent for Ubuntu
+TryExec=accio-work
+Exec=accio-work %u
+Icon=accio-work
+Terminal=false
+Categories=Development;
+Keywords=AI;Assistant;Coding;Automation;Ecommerce;
+MimeType=x-scheme-handler/accio;
+StartupNotify=true
+StartupWMClass=Accio

@@ -1,0 +1,1 @@
+.icbu-common-icon{display:inline-block;fill:var(--icon-color, currentColor);width:var(--icon-size, 1.2858em);height:var(--icon-size, 1.2858em);vertical-align:-.2858em}.icbu-common-icon-spin,.icbu-common-icon-loading{animation:icbu-common-icon-spin 1.5s infinite linear}@keyframes icbu-common-icon-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}

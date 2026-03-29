@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("./chunked-exec-oYIx_ich.js");require("node:util"),require("node:child_process"),require("node:url");const r=new URL("windows-trash.exe",require("url").pathToFileURL(__filename).href);exports.default=async function(t){await e.chunkedExec(r,t,200)};

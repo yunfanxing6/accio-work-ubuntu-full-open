@@ -1,0 +1,4 @@
+provider: generic
+url: https://work-download.accio.com/package/
+channel: beta
+updaterCacheDirName: '@phoenixdesktop-updater'

@@ -1,0 +1,8 @@
+{
+  "name": "accio",
+  "productName": "Accio",
+  "version": "0.4.6",
+  "description": "Accio Work Desktop Application",
+  "author": "Accio Work",
+  "main": "./out/main/index.js"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "accio-work-ubuntu-full-open",
+  "private": true,
+  "version": "0.4.6",
+  "description": "Reconstructed Accio Work Ubuntu port workspace",
+  "license": "MIT",
+  "scripts": {
+    "assemble": "./scripts/assemble-portable.sh",
+    "build:deb": "./scripts/build-deb.sh",
+    "install:local": "./scripts/install-local.sh",
+    "test": "./scripts/test-release.sh"
+  },
+  "devDependencies": {
+    "@electron/asar": "^4.0.1",
+    "electron": "35.7.5"
+  }
+}
