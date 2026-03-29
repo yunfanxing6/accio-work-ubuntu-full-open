@@ -9,8 +9,9 @@ It includes:
 - the reconstructed application tree in `app/`
 - Linux resource files in `resources/`
 - Ubuntu packaging metadata in `packaging/`
-- scripts for assembling a portable build, creating a `.deb`, validating the
-  runtime, installing locally, and preparing release assets
+- scripts for assembling a portable build, creating a `.deb`, creating an
+  `AppImage`, validating the runtime, installing locally, and preparing release
+  assets
 
 ## Why This Exists
 
@@ -23,6 +24,7 @@ can behave like a real Linux product:
 - Ubuntu desktop launcher integration
 - `accio://` protocol registration
 - `.deb` packaging
+- `AppImage` packaging
 - repeatable validation on Ubuntu
 
 ## What This Repository Is
@@ -45,7 +47,7 @@ That means the code here is primarily:
 - Debian packaging with desktop file, icons, AppStream metadata, and maintainer scripts
 - user-local installation for desktop testing
 - automated runtime validation on Ubuntu
-- release asset generation for both `.deb` and portable archive outputs
+- release asset generation for `.deb`, `AppImage`, and portable archive outputs
 
 ## Ubuntu Product Goal
 
@@ -68,6 +70,7 @@ The app itself remains an Electron application rather than a GTK or Qt rewrite.
 - `packaging/` - Debian control files, desktop file, AppStream metadata, maintainer scripts
 - `scripts/assemble-portable.sh` - produces `build/portable/Accio-linux-x64/`
 - `scripts/build-deb.sh` - produces `build/dist/accio-work_0.4.6_amd64.deb`
+- `scripts/build-appimage.sh` - produces `build/dist/Accio-0.4.6-linux-x86_64.AppImage`
 - `scripts/install-local.sh` - installs the built app into the current user's desktop environment
 - `scripts/test-release.sh` - validates the reconstructed Linux release end to end
 
@@ -94,6 +97,7 @@ The standard scripts generate:
 
 Release asset packaging also generates:
 
+- `build/dist/Accio-0.4.6-linux-x86_64.AppImage`
 - `build/dist/Accio-0.4.6-linux-x64-portable.tar.gz`
 - `build/dist/SHA256SUMS.txt`
 
@@ -109,6 +113,12 @@ Build a Debian package:
 
 ```sh
 npm run build:deb
+```
+
+Build an AppImage:
+
+```sh
+npm run build:appimage
 ```
 
 Build release assets for GitHub or manual distribution:
@@ -167,6 +177,7 @@ It also registers the `accio://` URL scheme for the current user.
 The packaged outputs target two common Ubuntu delivery modes:
 
 - `.deb` for system package installation and desktop integration
+- `AppImage` for a single-file portable Linux release
 - portable tarball for user-local unpack-and-run distribution
 
 Both artifacts are produced from the same reconstructed app tree and validated

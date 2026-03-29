@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "assemble": "./scripts/assemble-portable.sh",
+    "build:appimage": "./scripts/build-appimage.sh",
     "build:deb": "./scripts/build-deb.sh",
     "build:release-assets": "./scripts/build-release-assets.sh",
     "install:local": "./scripts/install-local.sh",
