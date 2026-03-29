@@ -7,6 +7,7 @@
   "scripts": {
     "assemble": "./scripts/assemble-portable.sh",
     "build:deb": "./scripts/build-deb.sh",
+    "build:release-assets": "./scripts/build-release-assets.sh",
     "install:local": "./scripts/install-local.sh",
     "test": "./scripts/test-release.sh"
   },

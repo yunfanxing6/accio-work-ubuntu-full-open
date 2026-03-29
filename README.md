@@ -1,15 +1,29 @@
-# Accio Work Ubuntu Full Reconstruction
+# Accio Work Ubuntu Port
 
-This repository contains a full reconstructed Ubuntu-oriented workspace for
-Accio Work.
+An Ubuntu-first reconstruction of Accio Work that turns the packaged desktop
+release into a Linux-native product workflow: buildable, installable,
+testable, and ready to publish.
 
 It includes:
 
 - the reconstructed application tree in `app/`
 - Linux resource files in `resources/`
 - Ubuntu packaging metadata in `packaging/`
-- scripts for assembling a portable build, building a `.deb`, validating the
-  runtime, and installing locally
+- scripts for assembling a portable build, creating a `.deb`, validating the
+  runtime, installing locally, and preparing release assets
+
+## Why This Exists
+
+The upstream desktop release was packaged for another platform. This workspace
+reconstructs a practical Ubuntu delivery layer around that release so the app
+can behave like a real Linux product:
+
+- Linux ELF runtime
+- Linux-native native modules
+- Ubuntu desktop launcher integration
+- `accio://` protocol registration
+- `.deb` packaging
+- repeatable validation on Ubuntu
 
 ## What This Repository Is
 
@@ -31,6 +45,7 @@ That means the code here is primarily:
 - Debian packaging with desktop file, icons, AppStream metadata, and maintainer scripts
 - user-local installation for desktop testing
 - automated runtime validation on Ubuntu
+- release asset generation for both `.deb` and portable archive outputs
 
 ## Ubuntu Product Goal
 
@@ -77,6 +92,11 @@ The standard scripts generate:
 - `build/portable/Accio-linux-x64/`
 - `build/dist/accio-work_0.4.6_amd64.deb`
 
+Release asset packaging also generates:
+
+- `build/dist/Accio-0.4.6-linux-x64-portable.tar.gz`
+- `build/dist/SHA256SUMS.txt`
+
 ## Build Flow
 
 Assemble the portable Linux product:
@@ -89,6 +109,12 @@ Build a Debian package:
 
 ```sh
 npm run build:deb
+```
+
+Build release assets for GitHub or manual distribution:
+
+```sh
+npm run build:release-assets
 ```
 
 Validate the reconstructed release:
@@ -117,6 +143,15 @@ The validation script checks:
 - browser relay startup
 - successful `ready-to-show` application startup
 
+## Release Workflow
+
+Typical Ubuntu release flow:
+
+1. `npm install`
+2. `npm test`
+3. `npm run build:release-assets`
+4. publish `build/dist/*` to GitHub Releases or another distribution channel
+
 ## Local Desktop Installation
 
 The local installer places the app in:
@@ -126,6 +161,16 @@ The local installer places the app in:
 - `~/Desktop/Accio Work.desktop`
 
 It also registers the `accio://` URL scheme for the current user.
+
+## Release Artifacts
+
+The packaged outputs target two common Ubuntu delivery modes:
+
+- `.deb` for system package installation and desktop integration
+- portable tarball for user-local unpack-and-run distribution
+
+Both artifacts are produced from the same reconstructed app tree and validated
+against the same runtime checks.
 
 ## Public Release Considerations
 
